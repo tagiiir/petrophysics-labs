@@ -1,36 +1,36 @@
-# XRD-анализ и определение минеральных фаз
+# XRD Analysis and Mineral Phase Identification
 
-Этот проект посвящён обработке данных рентгенофазового анализа (XRD), считыванию бинарных рентгенограмм, поиску дифракционных пиков, удалению фона методом скользящего отрезка и определению положения пиков с использованием корреляционного подхода.
-
----
-
-## Описание задачи
-
-Рентгенофазовый анализ (XRD) применяется для изучения кристаллической структуры минералов.  
-Цель проекта:
-- Считать бинарные файлы рентгенограмм;
-- Построить дифрактограммы;
-- Определить положение пиков двумя способами:
-  - По локальному максимуму;
-  - По шаблону (эталонному импульсу);
-- Очистить сигнал от фоновой составляющей;
-- Применить корреляционный подход для точного позиционирования пиков.
+This project focuses on processing X-ray diffraction (XRD) data, including reading binary diffractogram files, detecting diffraction peaks, removing background using a sliding segment method, and determining peak positions using a correlation-based approach.
 
 ---
 
-## Структура данных
+## Project Description
 
-- Данные XRD представлены в виде бинарных файлов (`.DAT`);
-- Первые 8 значений (32-битные целые числа) содержат служебную информацию и пропускаются;
-- Остальная часть — значения интенсивности дифракции;
-- Углы (2θ) вычисляются от 1.5° с шагом 0.025°.
+X-ray diffraction (XRD) is used to study the crystalline structure of minerals.  
+The goals of this project are:
+
+- To read binary diffractogram files;
+- To plot diffractograms;
+- To determine peak positions using two methods:
+  - By local maxima;
+  - By template matching (reference impulse);
+- To remove background noise using a sliding segment technique;
+- To apply a correlation-based method for accurate peak positioning.
 
 ---
 
-## Используемые библиотеки
+## Data Structure
 
-- `numpy` — массивы и векторные операции;
-- `matplotlib` — визуализация графиков;
-- `scipy.signal` — поиск пиков и корреляция;
-- `struct` — чтение бинарных файлов.
+- XRD data is stored in binary files (`.DAT`);
+- The first 8 values (32-bit unsigned integers) contain technical metadata and are skipped;
+- The remaining data consists of diffraction intensity values;
+- Diffraction angles (2θ) are computed starting from 1.5° with a step of 0.025°.
 
+---
+
+## Libraries Used
+
+- `numpy` — array manipulation and vectorized operations;
+- `matplotlib` — plotting and data visualization;
+- `scipy.signal` — peak detection and signal correlation;
+- `struct` — reading binary data.
